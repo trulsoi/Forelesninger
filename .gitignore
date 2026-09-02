@@ -1,0 +1,34 @@
+# -----------------------------------------------------------------
+# Python‑relaterte vanlige filer
+# -----------------------------------------------------------------
+__pycache__/
+*.py[cod]          # .pyc, .pyo, .pyd
+
+# Virtuelt miljø (justér navnet ditt om det er annerledes)
+venv/
+.env/
+
+# -----------------------------------------------------------------
+# Jupyter‑spesifikke filer
+# -----------------------------------------------------------------
+.ipynb_checkpoints/   # automatiske checkpoint‑mapper
+*.ipynb_checkpoints   # i tilfelle de ligger som filer
+
+# Output‑filer som ofte blir generert fra notebook‑celler
+*.html
+*.pdf
+*.tex
+*.log
+
+# -----------------------------------------------------------------
+# OS‑spesifikke filer (fungerer på macOS, Windows, Linux)
+# -----------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*~
+
+# -----------------------------------------------------------------
+# IDE‑/editor‑spesifikke
+# -----------------------------------------------------------------
+.vscode/
+.idea/
