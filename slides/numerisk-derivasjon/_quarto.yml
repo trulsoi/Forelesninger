@@ -1,0 +1,22 @@
+project:
+  type: default
+  output-dir: _site
+execute:
+  enabled: false
+format:
+  revealjs:
+    theme: [dark, theme.scss]
+    width: 1280
+    height: 720
+    margin: 0.06
+    slide-number: c/t
+    transition: none
+    background-transition: none
+    center: false
+    controls: true
+    progress: true
+    hash: true
+    embed-resources: true
+    html-math-method: katex
+    include-after-body: pause-demo.html
+lang: nb

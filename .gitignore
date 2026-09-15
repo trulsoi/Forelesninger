@@ -32,3 +32,13 @@ Thumbs.db
 # -----------------------------------------------------------------
 .vscode/
 .idea/
+
+# Forelesningskilder og lokale bygg
+!aktiviteter/**/index.html
+!slides/**/pause-demo.html
+_site/
+.quarto/
+_quarto_internal_scss_error.scss
+publisering/
+.ipynb_checkpoints/
+*.py[cod]
