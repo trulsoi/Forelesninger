@@ -1,0 +1,10 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (!window.Reveal) return;
+  Reveal.on("slidechanged", event => {
+    for (const frame of event.previousSlide?.querySelectorAll("iframe.demo") || []) {
+      frame.contentWindow?.postMessage("pause-derivative-demo", "*");
+    }
+  });
+});
+</script>

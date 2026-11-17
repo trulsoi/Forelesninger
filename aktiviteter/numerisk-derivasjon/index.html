@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fra gjennomsnittsfart til numerisk derivert · INGA1002</title>
+  <link rel="stylesheet" href="activity.css">
+  <script defer src="vendor/jsxgraphcore.js"></script>
+  <script defer src="activity.js"></script>
+</head>
+<body>
+<main>
+  <header><p class="eyebrow">INGA1002 · Programmering og numerikk</p>
+    <h1>Fra sekant til tangent</h1>
+    <p>To posisjoner gir en gjennomsnittshastighet. Hva skjer når målepunktene nærmer seg hverandre?</p>
+  </header>
+  <div id="load-error" hidden>Grafen kunne ikke lastes. <a href="sekant-tangent.svg">Åpne den statiske figuren.</a></div>
+  <div class="workspace">
+    <section class="visuals" aria-label="Bevegelse og posisjonsgraf">
+      <div class="road-panel">
+        <div class="panel-label"><span>Bevegelse langs en rett vei</span><span id="position-readout"></span></div>
+        <svg id="road" viewBox="0 0 800 96" role="img" aria-label="Bilens posisjon og de to målte posisjonene langs en tallinje">
+          <line x1="42" y1="57" x2="755" y2="57" stroke="#9e9589" stroke-width="2"/>
+          <path d="M 755 57 l -10 -5 m 10 5 l -10 5" stroke="#9e9589" fill="none"/>
+          <text x="42" y="88" fill="#d5c4a1">0 m</text>
+          <text id="road-end" x="745" y="88" text-anchor="end" fill="#d5c4a1"></text>
+          <g id="road-a"><line y1="32" y2="64" stroke="#83a598" stroke-width="3"/><text y="25" text-anchor="middle" fill="#83a598">A</text></g>
+          <g id="road-b"><line y1="32" y2="64" stroke="#fabd2f" stroke-width="3"/><text y="25" text-anchor="middle" fill="#fabd2f">B</text></g>
+          <g id="car"><rect x="-17" y="-11" width="34" height="12" rx="4" fill="#ebdbb2"/><path d="M -10 -11 L -6 -19 L 7 -19 L 13 -11" fill="#ebdbb2"/><circle cx="-10" cy="2" r="4" fill="#282828" stroke="#ebdbb2"/><circle cx="10" cy="2" r="4" fill="#282828" stroke="#ebdbb2"/></g>
+        </svg>
+      </div>
+      <div id="position-board" class="jxgbox" aria-label="Graf av posisjon mot tid med sekant og tangent"></div>
+      <div class="legend"><span class="curve">— Posisjon s(t)</span><span class="secant">— Sekant: målt gjennomsnitt</span><span class="tangent">┄ Tangent: eksakt hastighet</span></div>
+    </section>
+    <section class="controls" aria-label="Utforsk differansemetodene">
+      <label for="model">Posisjonsfunksjon</label>
+      <select id="model"><option value="quadratic">s(t) = 5t² · jevn akselerasjon</option><option value="cubic">s(t) = t³ · varierende akselerasjon</option></select>
+      <fieldset><legend>Metode</legend><div class="method-buttons">
+        <button data-method="forward" aria-pressed="true">Forover</button>
+        <button data-method="backward" aria-pressed="false">Bakover</button>
+        <button data-method="central" aria-pressed="false">Senter</button>
+      </div></fieldset>
+      <label for="time">Tidspunkt t <output id="time-value" for="time">1,00 s</output></label>
+      <input id="time" type="range" min="0.5" max="2.5" step="0.01" value="1">
+      <label for="step">Skrittlengde h <output id="step-value" for="step">0,20 s</output></label>
+      <input id="step" type="range" min="0.01" max="0.5" step="0.01" value="0.2">
+      <div class="actions"><button id="play" aria-pressed="false">Spill bevegelsen</button><button id="reset">Nullstill</button></div>
+      <label class="check"><input type="checkbox" id="show-tangent" checked> Vis tangenten og eksakt hastighet</label>
+      <div class="readings" aria-live="polite" aria-atomic="true">
+        <div id="formula" class="formula"></div>
+        <div id="interval"></div>
+        <div class="result-row"><span>Tilnærmet hastighet</span><strong id="approx"></strong></div>
+        <div id="exact-row" class="result-row"><span>Eksakt hastighet</span><strong id="exact"></strong></div>
+        <div id="error-row" class="result-row"><span>Absolutt feil</span><strong id="error"></strong></div>
+      </div>
+      <p id="insight" class="insight"></p>
+    </section>
+  </div>
+  <footer><strong>Prøv:</strong> Hold t fast og reduser h. Bytt metode. Bytt så til t³: Er senterdifferansen fortsatt eksakt? <span>t måles i sekunder, s i meter. Bevegelsen går i positiv retning.</span></footer>
+</main>
+</body>
+</html>

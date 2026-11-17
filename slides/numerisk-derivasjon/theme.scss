@@ -1,0 +1,35 @@
+/* Bygger på Jonas Harangs gruvbox-tema i pns/forelesninger. */
+/*-- scss:defaults --*/
+$body-bg: #282828;
+$body-color: #ebdbb2;
+$link-color: #83a598;
+$presentation-heading-color: #b8bb26;
+$presentation-font-size-root: 32px;
+$presentation-heading-font: "DejaVu Sans", sans-serif;
+$font-family-sans-serif: "DejaVu Sans", sans-serif;
+$code-color: #fabd2f;
+$code-block-bg: #32302f;
+/*-- scss:rules --*/
+.reveal h1 { font-size: 1.9em; }
+.reveal h2 { font-size: 1.45em; margin-bottom: .55em; }
+.reveal p { line-height: 1.35; }
+.reveal .eyebrow { color: #83a598; text-transform: uppercase; letter-spacing: .12em; font-size: .55em; margin-bottom: 1.1em; }
+.reveal .subtitle-line { color: #bdae93; font-size: .7em; }
+.reveal .question { color: #fabd2f; font-size: 1.12em; }
+.reveal .small { font-size: .7em; color: #bdae93; }
+.reveal .columns { gap: 1.4em; }
+.reveal img { border-radius: 8px; object-fit: contain; }
+.reveal .callout-box { background: #32302f; border-left: 5px solid #83a598; padding: .45em .8em; margin-top: .5em; }
+.reveal .compact-box { font-size: .78em; padding: .28em .65em; margin-top: .15em; }
+.reveal .why-box { font-size: .76em; border-left-color: #fabd2f; }
+.reveal .given-values { color: #bdae93; font-size: .72em; margin: -.2em 0 .65em; }
+.reveal .laser-values .math-step { font-size: .76em; }
+.reveal .math-step { margin: .35em 0; font-size: .94em; }
+.reveal table { font-size: .83em; }
+.reveal table th { color: #83a598; }
+.reveal pre { font-size: .7em; }
+.reveal .demo-slide h2 { margin-bottom: .15em; }
+.reveal iframe.demo { display:block; width:100%; height:570px; border:0; border-radius:8px; background:#282828; }
+.reveal .demo-slide .small { font-size:.5em; margin:.2em 0; }
+.reveal a { text-underline-offset: .15em; }
+.reveal .footer { color:#928374; }
